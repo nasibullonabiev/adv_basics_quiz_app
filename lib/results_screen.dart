@@ -9,7 +9,7 @@ class ResultsScreen extends StatelessWidget {
   final List<String> chosenAnswers;
   final void Function() onRestart;
 
-  List<Map<String, Object>> getSymmaryData() {
+  List<Map<String, Object>> get summaryData {
     final List<Map<String, Object>> symmary = [];
     for (var i = 0; i < chosenAnswers.length; i++) {
       symmary.add({
@@ -25,7 +25,6 @@ class ResultsScreen extends StatelessWidget {
 
   @override
   Widget build(context) {
-    final summaryData = getSymmaryData();
     final numTotalQuestions = questions.length;
     final numCorrectQuestions = summaryData.where((data) {
       return data['user_answer'] == data['correct_answer'];
